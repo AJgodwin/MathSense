@@ -1,0 +1,186 @@
+.viz-page .viz-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.viz-section {
+    margin-bottom: 40px;
+}
+
+.section-heading {
+    text-align: center;
+    color: var(--primary-600);
+    margin-bottom: 28px;
+    font-size: 1.6rem;
+}
+
+/* Steps Timeline */
+.steps-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.step-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-400), var(--primary-500));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Outcomes */
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.outcome-card {
+    text-align: center;
+    padding: 28px;
+}
+
+.outcome-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.outcome-card h4 {
+    color: var(--primary-600);
+    margin-bottom: 16px;
+}
+
+.outcome-compare {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.outcome-before,
+.outcome-after {
+    flex: 1;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+}
+
+.outcome-before {
+    background: var(--yellow-50);
+    border: 1px solid var(--yellow-200);
+}
+
+.outcome-after {
+    background: var(--success-bg);
+    border: 1px solid var(--success);
+}
+
+.compare-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+}
+
+.outcome-before p,
+.outcome-after p {
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+.outcome-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-400);
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* Screens */
+.screens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.screen-card {
+    text-align: center;
+    padding: 28px;
+}
+
+.screen-preview {
+    background: var(--primary-50);
+    border: 2px dashed var(--primary-200);
+    border-radius: var(--radius-md);
+    padding: 32px 20px;
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-card h4 {
+    color: var(--primary-600);
+    margin-bottom: 8px;
+}
+
+.screen-card p {
+    font-size: 0.92rem;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .outcome-compare {
+        flex-direction: column;
+    }
+
+    .outcome-arrow {
+        transform: rotate(90deg);
+    }
+
+    .step-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
