@@ -176,6 +176,17 @@ const InteractionTracker = () => {
     };
   }, [pushEvent, heatmapOn, trailOn]);
 
+  /* ── External toggle via custom event (from Navbar button) ── */
+  useEffect(() => {
+    const handleToggle = () => {
+      setVisible((v) => !v);
+    };
+    document.addEventListener('toggle-interaction-tracker', handleToggle);
+    return () => {
+      document.removeEventListener('toggle-interaction-tracker', handleToggle);
+    };
+  }, []);
+
   /* ═══════════ CANVAS: Heatmap ═══════════ */
   const drawHeatmap = useCallback(() => {
     const canvas = heatmapCanvasRef.current;

@@ -12,6 +12,11 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
+  const handleTrackerClick = () => {
+    document.dispatchEvent(new Event('toggle-interaction-tracker'));
+    closeMenu();
+  };
+
   const navLinks = [
     { path: '/', label: '🏠 Home' },
     { path: '/product', label: '📋 About' },
@@ -19,6 +24,7 @@ const Navbar = () => {
     { path: '/visualization', label: '📊 Visuals' },
     { path: '/team', label: '👥 Team' },
     { path: '/course', label: '🎓 Course' },
+    { path: '#tracker', label: '🧪 Tracker (Ctrl+I)' },
   ];
 
   return (
@@ -44,17 +50,28 @@ const Navbar = () => {
         {/* Nav links - array mapping */}
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `nav-link ${isActive ? 'nav-link-active' : ''}`
-              }
-              onClick={closeMenu}
-              end={link.path === '/'}
-            >
-              {link.label}
-            </NavLink>
+            link.path === '#tracker' ? (
+              <button
+                key={link.path}
+                type="button"
+                className="nav-link tracker-link"
+                onClick={handleTrackerClick}
+              >
+                {link.label}
+              </button>
+            ) : (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? 'nav-link-active' : ''}`
+                }
+                onClick={closeMenu}
+                end={link.path === '/'}
+              >
+                {link.label}
+              </NavLink>
+            )
           ))}
         </div>
       </div>
